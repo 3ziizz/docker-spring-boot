@@ -1,0 +1,20 @@
+version: '3.6'
+services:
+    mysql:
+        image: mysql
+        restart: always
+        container_name: mysql-container
+
+        volumes:
+          - mysql-data:/var/lib/mysql
+          - /mysql_init:/docker-entrypoint-initdb.d
+        environment:
+          MYSQL_ROOT_PASSWORD: root01
+          MYSQL_DATABASE: world-db
+          MYSQL_USER: world
+          MYSQL_PASSWORD: world123
+
+volumes:
+  mysql-data:
+    name: test-mysql-data
+    
