@@ -1,0 +1,21 @@
+version: '2'
+volumes:
+  data_sql:    
+services:  
+medical-mysql:
+    image: mysql
+    hostname: medical-mysql    
+    volumes:
+     - "../../../world.sql:/docker-entrypoint-initdb.d"
+    environment:
+      MYSQL_DATABASE: Medical
+      MYSQL_ROOT_PASSWORD: root
+      STARTUP_SQL: data_sql
+    ports:
+    - "3306:3306"
+  medical-main:
+    build: .
+    ports:
+     - "8080:8080"    
+    depends_on:
+     - medical-mysql
