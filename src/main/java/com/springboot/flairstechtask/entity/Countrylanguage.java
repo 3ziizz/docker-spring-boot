@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author maziz
  */
 @Entity
-@Table(catalog = "world-db", schema = "")
+@Table(catalog = "world-db", schema = "",name="country_language")
 @XmlRootElement
 //@NamedQueries({
 //    @NamedQuery(name = "Countrylanguage.findAll", query = "SELECT c FROM Countrylanguage c"),
@@ -33,6 +33,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 //    @NamedQuery(name = "Countrylanguage.findByLanguage", query = "SELECT c FROM Countrylanguage c WHERE c.countrylanguagePK.language = :language"),
 //    @NamedQuery(name = "Countrylanguage.findByIsOfficial", query = "SELECT c FROM Countrylanguage c WHERE c.isOfficial = :isOfficial"),
 //    @NamedQuery(name = "Countrylanguage.findByPercentage", query = "SELECT c FROM Countrylanguage c WHERE c.percentage = :percentage")})
+
 public class Countrylanguage implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@EmbeddedId
@@ -121,15 +122,15 @@ public class Countrylanguage implements Serializable {
 		return true;
 	}
 
-//	@Override
-//	public String toString() {
-//		return "Countrylanguage [countrylanguagePK=" + countrylanguagePK + ", isOfficial=" + isOfficial
-//				+ ", percentage=" + percentage + ", country=" + country + "]";
-//	}
+	@Override
+	public String toString() {
+		return "Countrylanguage [countrylanguagePK=" + countrylanguagePK + ", isOfficial=" + isOfficial
+				+ ", percentage=" + percentage + ", country=" + country + "]";
+	}
 
-	    @Override
-	    public String toString() {
-	        return "com.springboot.flairstechtask.Countrylanguage[ countrylanguagePK=" + countrylanguagePK + " ]";
-	    }
+//	    @Override
+//	    public String toString() {
+//	        return "com.springboot.flairstechtask.Countrylanguage[ countrylanguagePK=" + countrylanguagePK + " ]";
+//	    }
 
 }
