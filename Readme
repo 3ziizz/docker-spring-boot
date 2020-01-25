@@ -1,0 +1,7 @@
+-you can run the whole project by
+ ./run.sh
+
+-Note : check port 8080 and 5432 noot used for any other application
+
+
+unit test --> SpringBootDemoApplicationTests for two test cases
