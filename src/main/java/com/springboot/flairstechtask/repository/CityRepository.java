@@ -10,5 +10,5 @@ public interface CityRepository extends CrudRepository<City, Integer> {
 
 	List<City> findAll();
 
-	City findById(int id);
+	City findById (int id);
 }
